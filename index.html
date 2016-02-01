@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="DanMail">
+
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- ANGULAR -->
+  <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- DIRECTIVES -->
+  <title>DanMail</title>
+</head>
+
+<body ng-controller="Main as main">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#about"></a>
+        </li>
+        <li><a ng-click="main.mailVisibility = true" href="#contact" ng-class="{active :main.mailVisibility}">Mail</a></li>
+        <li><a ng-click="main.mailVisibility = false" ng-class="{active : !main.mailVisibility}" href="#contact">Contacts</a></li>
+        <li>
+          <a ng-click="main.move('trash')" href="#contact"><img src="img/trash.png" height="30" width="30"></a>
+        </li>
+        <li>
+          <form>
+            <input type="search" class="form-control" placeholder="Search mails" ng-model="main.searchText" ng-change="main.search()"> </form>
+        </li>
+        <li class="navbar-right">
+          <span>
+            <img ng-src="https://pp.vk.me/c616428/v616428036/8dd0/oERbNws4rnE.jpg" class="img-circle img-responsive" src="https://randomuser.me/api/portraits/thumb/men/57.jpg"></span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- main layout -->
+  <div class="container">
+    <mail ng-show="main.mailVisibility"></mail>
+    <contacts-page ng-show="!main.mailVisibility"></contacts-page>
+  </div>
+  <!-- end Container main layout -->
+  <script type="text/javascript">
+  "use strict";
+  var app = angular.module("DanMail", ['LocalStorageModule']);
+
+  app.controller('Main', function() {
+    this.mailVisibility = false;
+  });
+
+  </script>
+
+  <script src="angular-local-storage.js"></script>
+  <script src="contacts/contactsPageDirective.js"></script>
+  <script src="contacts/contactsService.js"></script>
+  <script src="contacts/contactEdit/contactDirective.js"></script>
+  <script src="mail/mailDirective.js"></script>
+  <script src="mail/messagesService.js"></script>
+  <script src="mail/aside/asideDirective.js"></script>
+  <script src="mail/aside/asideService.js"></script>
+</body>
+
+</html>

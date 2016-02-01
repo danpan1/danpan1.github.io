@@ -1,0 +1,89 @@
+.main-columns {
+    overflow: scroll;
+    max-height: 835px;
+}
+#contactEdit{
+    width: 550px;
+    height: 480px;
+    position: absolute;
+    background: white;
+    top: 20%;
+    left: calc( 50% - 225px);
+    padding: 50px;
+
+    box-shadow: rgba(0,0,0,.6) 0 2px 9px;
+    
+}
+#contactEdit .close{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 50px;
+    
+}
+.mail-layout-Aside {}
+
+body {
+    overflow: hidden;
+    padding-top: 70px;
+}
+.navbar-nav a{
+    font-size: 19px;
+
+}
+.navbar-nav .active{
+    background: green !important;
+    color: white !important;
+    font-size: 19px;
+
+}
+.container {}
+
+.mail-layoyt-messages-list-box {}
+
+#compose {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+nav img {
+    max-height: 50px;
+}
+1
+.profile-img {
+    max-height: 70px;
+}
+
+#newMessage {
+    /*border: 1px;*/
+    display: inline-block;
+    background: white;
+    width: 600px;
+    height: 485px;
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+    z-index: 10;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+#newMessage .btn {
+    margin: 10px;
+}
+#newMessage .close {
+	position: absolute;
+	right: 0;
+	top:0;
+	padding: 15px;
+}
+
+.new-message-header {
+    padding: 15px;
+    margin: 0
+}
+
+.my-float-right{
+    float: right;
+}
+
