@@ -4,7 +4,7 @@ app.directive('contact', function () {
     restrict: 'E',
     scope: {
       avatar: "=",
-      name: "@",
+      name: "=",
       email: "=",
       tel: "=",
       dateOfBirth: "=",
@@ -27,6 +27,7 @@ app.directive('contact', function () {
             "notes": self.notes,
             "show": self.show
           }
+          
           //Как добавлять контакт)))))
         contactsService.add(contact);
         this.show = false;
