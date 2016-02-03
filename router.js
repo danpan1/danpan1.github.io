@@ -17,5 +17,5 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     })
 
 
-  // $urlRouterProvider.otherwise('users');
+  $urlRouterProvider.otherwise('mail/inbox');
 });
