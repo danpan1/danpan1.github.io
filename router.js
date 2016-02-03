@@ -4,7 +4,7 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('mail', {
-      url: '/mail',
+      url: '/mail/:asideTitle',
       template: '<mail></mail>'
     })
     .state('contacts', {

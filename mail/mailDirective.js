@@ -4,10 +4,11 @@ app.directive('mail', function () {
     scope: {},
     bindToController: true,
     templateUrl: 'mail/mail.html',
-    controller: function ($http, messagesService, $filter) {
+    controller: function ($http, messagesService, $filter, $stateParams) {
 
       // console.log("mailContrl");
-
+      // console.log($stateParams.asideTitle)
+      // if ($stateParams.asideTitle === no) {};
       messagesService.get().then((data) => {
         //все сообщения приходят в messages
         this.messages = data;
@@ -38,13 +39,18 @@ app.directive('mail', function () {
         this.message = {};
       }
 
+        console.log("filterByAsideFolder213")
       this.filterByAsideFolder = (asideTitle) => {
+        console.log("filterByAsideFolder", asideTitle)
         this.message = {};
         this.searchField = "";
-        this.messagesListFilter = {
-          "folder": asideTitle.toLowerCase()
+        if (asideTitle) {
+          this.messagesListFilter = {
+            "folder": asideTitle.toLowerCase()
+          };
         };
       }
+
 
 
     },

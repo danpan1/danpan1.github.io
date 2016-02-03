@@ -1,6 +1,6 @@
-<a  href="#" 
+<a  href="#/mail/{{value.title.toLowerCase()}}" 
 	class = "list-group-item" 
-	ng-repeat="(title, value) in aside.folders" 
+	ng-repeat="(index, value) in aside.folders" 
 	ng-click = "aside.click(value)"
 	ng-class = "{active: aside.active === value}">
 	{{value.title}} 
