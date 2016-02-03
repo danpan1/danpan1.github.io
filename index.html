@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <!-- ANGULAR -->
   <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="libs/angular-ui-router.min.js"></script>
   <link rel="stylesheet" href="css/style.css" />
   <!-- DIRECTIVES -->
   <title>DanMail</title>
@@ -21,8 +22,8 @@
         <li>
           <a href="https://github.com/danpan1/danpan1.github.io">GitHub of this project</a>
         </li>
-        <li><a ng-click="main.mailVisibility = true" href="#contact" ng-class="{active :main.mailVisibility}">Mail</a></li>
-        <li><a ng-click="main.mailVisibility = false" ng-class="{active : !main.mailVisibility}" href="#contact">Contacts</a></li>
+        <li><a href="#mail">Mail</a></li>
+        <li><a href="#contacts">Contacts</a></li>
         <li>
           <a ng-click="main.move('trash')" href="#contact"><img src="img/trash.png" height="30" width="30"></a>
         </li>
@@ -39,21 +40,19 @@
   </nav>
   <!-- main layout -->
   <div class="container">
-    <mail ng-show="main.mailVisibility"></mail>
-    <contacts-page ng-show="!main.mailVisibility"></contacts-page>
+    <ui-view></ui-view>
   </div>
   <!-- end Container main layout -->
   <script type="text/javascript">
   "use strict";
-  var app = angular.module("DanMail", ['LocalStorageModule']);
+  var app = angular.module("DanMail", ['LocalStorageModule', 'ui.router']);
 
   app.controller('Main', function() {
     this.mailVisibility = false;
   });
-
   </script>
-
-  <script src="angular-local-storage.js"></script>
+  <script src="libs/angular-local-storage.js"></script>
+  <script src="router.js"></script>
   <script src="contacts/contactsPageDirective.js"></script>
   <script src="contacts/contactsService.js"></script>
   <script src="contacts/contactEdit/contactDirective.js"></script>

@@ -14,6 +14,7 @@
     <p class="list-group-item-text">{{value.email}}<!-- <img src="{{value.avatar}}"> --></p>
   </a>
 </div>
+<ui-view>
 <contact ng-show = "contactsPage.contact.show"
 avatar = "contactsPage.contact.avatar"
 name = "contactsPage.contact.name"
@@ -24,6 +25,7 @@ notes = "contactsPage.contact.notes"
 show = "contactsPage.contact.show"
 refresh = "contactsPage.refresh()"
 ></contact>
+</ui-view>
 <!-- end messages list -->
 <!-- message body -->
 <!-- <div class="main-columns col-md-5 list-group"> -->
