@@ -22,8 +22,9 @@
         <li>
           <a href="https://github.com/danpan1/danpan1.github.io">GitHub of this project</a>
         </li>
-        <li><a href="#mail/inbox">Mail</a></li>
-        <li><a href="#contacts">Contacts</a></li>
+        <li><a ui-sref="mail">Mail</a></li>
+        <li><a ui-sref="contacts">Contacts</a></li>
+        <li><a ui-sref="login" ng-click = "main.logOut()">LOG OUT</a></li>
         <li>
           <a ng-click="main.move('trash')" href="#contact"><img src="img/trash.png" height="30" width="30"></a>
         </li>
@@ -47,17 +48,21 @@
   "use strict";
   var app = angular.module("DanMail", ['LocalStorageModule', 'ui.router']);
 
-  app.controller('Main', function() {
+  app.controller('Main', function(AuthService) {
     this.mailVisibility = false;
+    this.logOut = () => AuthService.logOut();
   });
   </script>
   <script src="libs/angular-local-storage.js"></script>
   <script src="router.js"></script>
+  <script src="login/login.js"></script>
+  <script src="login/AuthService.js"></script>
   <script src="contacts/contactsPageDirective.js"></script>
   <script src="contacts/contactsService.js"></script>
   <script src="contacts/contactEdit/contactDirective.js"></script>
   <script src="mail/mailDirective.js"></script>
   <script src="mail/messagesService.js"></script>
+  <script src="mail/mailStateService.js"></script>
   <script src="mail/aside/asideDirective.js"></script>
   <script src="mail/aside/asideService.js"></script>
 </body>

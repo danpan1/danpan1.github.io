@@ -1,27 +1,24 @@
-app.directive('mail', function () {
+app.directive('mail', function() {
   return {
     restrict: 'E',
     scope: {},
     bindToController: true,
     templateUrl: 'mail/mail.html',
-    controller: function ($http, messagesService, $filter, $stateParams) {
+    controller: function($http, $state, $filter, $stateParams, mailStateService, messagesService) {
 
-      // console.log("mailContrl");
-      // console.log($stateParams.asideTitle)
-      // if ($stateParams.asideTitle === no) {};
-      messagesService.get().then((data) => {
-        //все сообщения приходят в messages
-        this.messages = data;
-        //init activeAside = INBOX, messagesListFilter = "INBOX"
-        // this.filterByAsideFolder(this.aside[0]);
-        //BAGES aside
-        this.countFolders = messagesService.countFolders();
-        // console.log(this.countFolders);
-      }, function (reason) {
-        console.log("messagesService fail request");
-      }, function (update) {
-        alert('Got notification: ' + update);
-      });
+      var messageId = parseInt($stateParams.messageId);
+      var mailBox = $stateParams.mailBox;
+
+      console.log(messageId, mailBox)
+      console.log(mailStateService.get(), "mail");
+
+      if (!mailBox || !messageId) {
+        messageId = mailStateService.get().messageId;
+        mailBox = mailStateService.get().mailBox;
+        $state.go(`mail`, { 'mailBox': mailBox, 'messageId': messageId })
+      }
+
+      this.messages = messagesService.getAll();
 
       //filter messages by searchText field
       this.search = () => {
@@ -39,18 +36,24 @@ app.directive('mail', function () {
         this.message = {};
       }
 
-        console.log("filterByAsideFolder213")
-      this.filterByAsideFolder = (asideTitle) => {
-        console.log("filterByAsideFolder", asideTitle)
+      this.filterByAsideFolder = () => {
         this.message = {};
         this.searchField = "";
-        if (asideTitle) {
+        if (mailBox) {
           this.messagesListFilter = {
-            "folder": asideTitle.toLowerCase()
+            "folder": mailBox.toLowerCase()
           };
         };
       }
 
+      this.filterByAsideFolder();
+
+      // console.log(messagesService.getOne(messageId), "messagesService.getOne(messageId)")
+      this.message = messagesService.getOne(messageId);
+      if (this.message.folder.toLowerCase() !== mailBox) {
+        this.message = {}
+      }
+      mailStateService.save()
 
 
     },
@@ -58,23 +61,23 @@ app.directive('mail', function () {
   };
 });
 
-app.directive('messagesList', function () {
+app.directive('messagesList', function() {
   return {
     restrict: 'E',
     templateUrl: 'mail/message/messages-list.html'
   };
 });
 
-app.directive('message', function () {
+app.directive('message', function() {
   return {
     restrict: 'E',
     scope: {
-      name: "=",
-      email: "=",
-      body: "="
+      message: "="
     },
     bindToController: true,
-    controller: function () {},
+    controller: function() {
+      // console.log($stateParams.messageId)
+    },
     templateUrl: 'mail/message/message.html',
     controllerAs: "message"
   };

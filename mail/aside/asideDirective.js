@@ -2,39 +2,24 @@ app.directive('aside', function (asideService, messagesService) {
   return {
     restrict: 'E',
     scope: {
-      "folders": '=',
-      "call": '&'
+      "folders": '='
     },
     bindToController: true,
     controller: function (asideService, $stateParams, $filter) {
 
-      // console.log($stateParams.asideTitle)
       // как мне здесь получить countFolders из messagesService если там
       // еще нет сообщений. приходится делать еще один запрос
-      messagesService.get().then((data) => {
-        this.countFolders = messagesService.countFolders();
-      }, function (reason) {
-        console.log("messagesService fail request");
-      }, function (update) {
-        console.log('Got notification: ' + update);
-      });
-
-      this.click = (aside) => {
-        console.log("click", aside)
-          // console.log("click", this.call("ASD"))
-        this.active = aside;
-        console.log("this.active", this.active)
-        this.call(aside);
-
-      }
-
-
+      // messagesService.getAll().then((data) => {
+      //   this.countFolders = messagesService.countFolders();
+      // }, function (reason) {
+      //   console.log("messagesService fail request");
+      // }, function (update) {
+      //   console.log('Got notification: ' + update);
+      // });
+      
+      this.countFolders = messagesService.countFolders();
       //aside get INBOX, SENT, SPAM, TRASH
       this.folders = asideService.get();
-      this.active = this.folders[0];
-      var t = $filter('getByTitle')(this.folders, $stateParams.asideTitle);
-      console.log("filter REs", t)
-      this.click(t);
 
     },
     templateUrl: 'mail/aside/aside.html',
