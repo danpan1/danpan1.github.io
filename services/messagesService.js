@@ -8,7 +8,11 @@ app.service("messagesService", function($http, $q) {
         .success((data) => {
           this.messages = data;
           isDataReceived = true;
-          deferred.resolve(this.messages);
+          // timeout для preloader animation (for fun)
+          // setTimeout(() => {
+            deferred.resolve(this.messages);
+          // }, 1200)
+
         })
         .error(function(data) {
           console.log("messagesService fail request");
@@ -39,7 +43,7 @@ app.service("messagesService", function($http, $q) {
       return obj;
     }
   }
-  
+
   this.isDataReceived = () => isDataReceived;
 
 })
