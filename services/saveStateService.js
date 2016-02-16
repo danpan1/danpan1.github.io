@@ -1,9 +1,8 @@
-app.service("mailStateService", function($stateParams, $state) {
+app.service("saveStateService", function($stateParams, $state) {
 
-  this.save = () => {
-    console.log("saved",$stateParams.mailBox)
-    this.mailBox = $stateParams.mailBox;
-    this.messageId = $stateParams.messageId;
+  this.save = (mailBox, messageId) => {
+    this.mailBox = mailBox;
+    this.messageId = messageId;
   };
 
   this.get = function() {

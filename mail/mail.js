@@ -4,17 +4,17 @@ app.directive('mail', function() {
     scope: {},
     bindToController: true,
     templateUrl: 'mail/mail.html',
-    controller: function($http, $state, $filter, $stateParams, mailStateService, messagesService) {
+    controller: function($http, $state, $filter, $stateParams, saveStateService, messagesService) {
 
       var messageId = parseInt($stateParams.messageId);
       var mailBox = $stateParams.mailBox;
 
       console.log(messageId, mailBox)
-      console.log(mailStateService.get(), "mail");
+      console.log(saveStateService.get(), "mail");
 
       if (!mailBox || !messageId) {
-        messageId = mailStateService.get().messageId;
-        mailBox = mailStateService.get().mailBox;
+        messageId = saveStateService.get().messageId;
+        mailBox = saveStateService.get().mailBox;
         $state.go(`mail`, { 'mailBox': mailBox, 'messageId': messageId })
       }
 
@@ -53,32 +53,10 @@ app.directive('mail', function() {
       if (this.message.folder.toLowerCase() !== mailBox) {
         this.message = {}
       }
-      mailStateService.save()
+      saveStateService.save(mailBox, messageId)
 
 
     },
     controllerAs: "mail"
-  };
-});
-
-app.directive('messagesList', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'mail/message/messages-list.html'
-  };
-});
-
-app.directive('message', function() {
-  return {
-    restrict: 'E',
-    scope: {
-      message: "="
-    },
-    bindToController: true,
-    controller: function() {
-      // console.log($stateParams.messageId)
-    },
-    templateUrl: 'mail/message/message.html',
-    controllerAs: "message"
   };
 });

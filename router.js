@@ -10,16 +10,15 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
       template: '<mail></mail>',
       resolve: {
         messagesX: function(messagesService) {
-          return messagesService.get().then((data) => {
-            // console.log("resolve mail messages")
-          }, function(reason) {
-            console.log("messagesService fail request");
-          }, function(update) {
-            console.log('Got notification: ' + update);
-          });
-        },
-        messagesX2: function(messagesService) {
-          return { asdasd: 123 }
+          if (!messagesService.isDataReceived()) {
+            return messagesService.get().then((data) => {
+              console.log("resolve mail messages")
+            }, function(reason) {
+              console.log("messagesService fail request");
+            }, function(update) {
+              console.log('Got notification: ' + update);
+            });
+          }
         }
 
       }
@@ -41,15 +40,19 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('mail/inbox');
 });
 
-app.run(function($rootScope, $state, $stateParams, AuthService, mailStateService) {
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
+app.run(function($rootScope, $state, $stateParams, AuthService, saveStateService) {
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, fromParams) {
+
     if (!AuthService.isAuthorized() && toState.name !== 'login') {
-      mailStateService.save();
-      console.log($stateParams.mailBox, "stateParams.mailBox");
-      console.log(mailStateService.get(), "router");
+
+      saveStateService.save(fromParams.mailBox,fromParams.messageId);
+
       event.preventDefault();
       alert("Вы должны авторизоваться");
       $state.go('login');
     }
+
   })
+  
 })
