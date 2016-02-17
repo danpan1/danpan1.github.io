@@ -1,10 +1,14 @@
 app.service('AuthService', function(localStorageService) {
   var isLogin = false;
 
-  if (localStorageService.get("isAuthorized")) {
-    isLogin = true;
+  this.checkLocalStorage = () => {
+    if (localStorageService.get("isAuthorized")) {
+      isLogin = true;
+    }
   }
 
+  this.checkLocalStorage();
+  
   this.authorize = (login, password) => {
 
     if (login == 1 && password == 1) {

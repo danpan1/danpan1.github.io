@@ -1,59 +1,53 @@
-describe('myApp', function() {
+describe('DanMail', function() {
 
-  beforeEach(module('myApp'));
+  beforeEach(module('DanMail'));
 
-  describe('service', function() {
+  describe('login', function() {
 
-    it('should do the sum', inject(function(Calc) {
-      expect(Calc.sum(3,4)).toBe(7);
-    }));
-  });
+    var state, AuthService, login;
 
-  describe('controller', function() {
+    beforeEach(inject(function(_AuthService_, _$state_, $controller) {
+      AuthService = _AuthService_;
+      state = _$state_;
 
-    var controller, Calc;
-    
-    beforeEach(inject(function($controller, _Calc_) {
-      Calc = _Calc_;
-      spyOn(Calc, 'sum').and.returnValue(7);
-      controller = $controller('MainController', { Calc: Calc});
-    }));
-    
-    
-    it('should do the sum', inject(function(Calc) {
-      controller.doCalculations();
-      expect(Calc.sum).toHaveBeenCalled();
+
+      spyOn(AuthService, 'authorize').and.returnValue(true);
+      spyOn(state, 'go').and.returnValue(true);
+      login = $controller('login', { AuthService: AuthService, $state: state });
+
     }));
 
-    it('should do the sum', inject(function() {
-      controller.doCalculations();
-      expect(controller.result).toBe(7);
-    }));
-  });
+    it('should call state.go', inject(function(AuthService, state) {
 
+      // login.doLogin(1, 1);
+      expect(state.go).toHaveBeenCalled();
 
-  describe('service with $http', function() {
-
-    var UserService,
-      $httpBackend,
-      mockUsers = [{name: 'John'}];
-
-    beforeEach(inject(function(_$httpBackend_, _UserService_) {
-      $httpBackend = _$httpBackend_;
-      UserService = _UserService_;
-
-      $httpBackend.whenGET('/users').respond(mockUsers);
-      $httpBackend.whenGET('/users/1').respond(mockUsers[0]);
     }));
 
-    it('should get one user', function(done) {
-      UserService.getOne(1).then(function(user) {
-        expect(user.name).toBe(mockUsers[0].name);
-        done();
-      });
+    // describe('login controller', function() {
 
-      $httpBackend.flush();
-    });
+    //   var controller, Calc;
+
+    //   beforeEach(inject(function($controller, _Calc_) {
+    //     Calc = _Calc_;
+    //     spyOn(Calc, 'sum').and.returnValue(7);
+    //     controller = $controller('MainController', { Calc: Calc });
+    //   }));
+
+
+    //   it('should do the sum', inject(function(Calc) {
+    //     controller.doCalculations();
+    //     expect(Calc.sum).toHaveBeenCalled();
+    //   }));
+
+    //   it('should do the sum', inject(function() {
+    //     controller.doCalculations();
+    //     expect(controller.result).toBe(7);
+    //   }));
+    // });
+
+
+
   });
 
 });

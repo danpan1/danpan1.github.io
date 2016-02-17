@@ -9,6 +9,7 @@ webTest
 6. Mock
 7. WebPack
 Не делать reload при выборе сообщения и т д
+8. Trash
 
 8.  Css and design
 9. Cookie for save login
@@ -17,3 +18,6 @@ webTest
 12. вы должны авторизоваться DIV timeout
 13. авторизация процесс. 
 +++++14. Preloader
+
+посмотреть как делалось с юзерами с RestAngular
+!!! есть проблема того что контроллеры перезагружаются при выборе message
