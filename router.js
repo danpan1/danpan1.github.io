@@ -25,10 +25,15 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
     })
     .state('contacts', {
       url: '/contacts',
+      abstract: true,
+      template: '<ui-view/>'
+    })
+    .state('contacts.list', {
+      url: '/list',
       template: '<contacts-page></contacts-page>'
     })
-    .state('contacts.add', {
-      url: '/:add',
+    .state('contacts.edit', {
+      url: '/:contactId/edit',
       template: '<contact></contact>'
     })
     .state('login', {
@@ -37,16 +42,17 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
     })
 
 
-  $urlRouterProvider.otherwise('mail/inbox');
+  $urlRouterProvider.otherwise('mail');
 });
 
 app.run(function($rootScope, $state, $stateParams, AuthService, saveStateService) {
 
   $rootScope.$on('$stateChangeStart', function(event, toState, fromParams) {
 
+    // console.log(toState, fromParams);
     if (!AuthService.isAuthorized() && toState.name !== 'login') {
 
-      saveStateService.save(fromParams.mailBox,fromParams.messageId);
+      saveStateService.save(fromParams.mailBox, fromParams.messageId);
 
       event.preventDefault();
       alert("Вы должны авторизоваться");
@@ -54,5 +60,5 @@ app.run(function($rootScope, $state, $stateParams, AuthService, saveStateService
     }
 
   })
-  
+
 })

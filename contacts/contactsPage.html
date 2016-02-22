@@ -1,11 +1,12 @@
 <!-- aside(inbox,sent,draft,trash,spam) -->
 <div class="mail-layout-Aside main-columns col-md-2 list-group">
-  <button type="button" class="btn btn-lg btn-danger" id="compose" ng-click="contactsPage.show({})">Compose Contact</button>
+  <button type="button" class="btn btn-lg btn-danger" id="compose" ui-sref="contacts.edit({contactId : 'new'})">Add contact</button>
 </div>
 <!-- end aside(inbox,sent,draft,trash,spam)-->
 <!-- messages list -->
 <div class="main-columns col-md-10 list-group ">
-  <a href="#" 
+  <a ui-sref = "contacts.edit({contactId : '{{value.id}}'})"
+    ui-sref-active="active" 
   class="mail-layoyt-messages-list-box list-group-item" 
   ng-repeat="(key, value) in contactsPage.contacts | filter:main.messagesListFilter" 
   ng-click="contactsPage.show(value)" 
@@ -14,18 +15,6 @@
     <p class="list-group-item-text">{{value.email}}<!-- <img src="{{value.avatar}}"> --></p>
   </a>
 </div>
-<ui-view>
-<contact ng-show = "contactsPage.contact.show"
-avatar = "contactsPage.contact.avatar"
-name = "contactsPage.contact.name"
-email = "contactsPage.contact.email"
-tel = "contactsPage.contact.tel"
-dateOfBirth = "contactsPage.contact.dateOfBirth"
-notes = "contactsPage.contact.notes"
-show = "contactsPage.contact.show"
-refresh = "contactsPage.refresh()"
-></contact>
-</ui-view>
 <!-- end messages list -->
 <!-- message body -->
 <!-- <div class="main-columns col-md-5 list-group"> -->

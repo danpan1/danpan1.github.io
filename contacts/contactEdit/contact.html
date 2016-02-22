@@ -1,26 +1,21 @@
 <div id="contactEdit"><form>
-  <button type="button" class="close" aria-label="Close" ng-click = "contact.show = false"><span aria-hidden="true">&times;</span></button>
+  <button type="button" class="close" aria-label="Close" ui-sref= "contacts.list"><span aria-hidden="true">&times;</span></button>
   <div class="form-group">
     <label for="exampleInputName">Name</label>
-    <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model = "contact.name">
+    <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model = "contact.current.name">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model = "contact.email">
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model = "contact.current.email">
   </div>
   <div class="form-group">
     <label for="exampleInputTel">Tel</label>
-    <input type="text" class="form-control" id="exampleInputTel" placeholder="Tel" ng-model = "contact.tel">
+    <input type="text" class="form-control" id="exampleInputTel" placeholder="Tel" ng-model = "contact.current.tel">
   </div>
   <div class="form-group">
     <label for="Notes">Notes</label>
-    <input type="textarea" class="form-control" id="Notes" placeholder="Notes" ng-model = "contact.notes">
+    <input type="textarea" class="form-control" id="Notes" placeholder="Notes" ng-model = "contact.current.notes">
   </div>
-  <!-- <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div> -->
   <button type="submit" class="btn btn-default" ng-click = "contact.add()">Submit</button>
 </form>
 </div>

@@ -1,37 +1,25 @@
 "use strict";
-app.directive('contact', function () {
+app.directive('contact', function() {
   return {
     restrict: 'E',
-    scope: {
-      avatar: "=",
-      name: "=",
-      email: "=",
-      tel: "=",
-      dateOfBirth: "=",
-      notes: "=",
-      show: "=",
-      refresh: "&"
-    },
+    scope: {},
     bindToController: true,
     templateUrl: 'contacts/contactEdit/contact.html',
-    controller: function (contactsService) {
+    controller: function(contactsService, $stateParams, $state) {
       var self = this;
-      // какие данные тут использовать. как переносить их в контактлист
+      var isNewContact = $stateParams.contactId === "new";
+      if (!isNewContact) this.current = contactsService.get()[parseInt($stateParams.contactId) - 1];
+      // console.log(contactsService.get())
+
       this.add = () => {
-        let contact = {
-            "avatar": self.avatar,
-            "name": self.name,
-            "email": self.email,
-            "tel": self.tel,
-            "dateOfBirth": self.dateOfBirth,
-            "notes": self.notes,
-            "show": self.show
-          }
-          
-          //Как добавлять контакт)))))
-        contactsService.add(contact);
-        this.show = false;
-        this.refresh();
+
+        if (isNewContact) {
+          contactsService.add(this.current);
+        } else {
+          contactsService.edit(this.current);
+        }
+
+        $state.go("contacts.list")
       }
     },
     controllerAs: "contact"
