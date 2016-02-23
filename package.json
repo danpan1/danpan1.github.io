@@ -1,0 +1,28 @@
+{
+  "name": "danpan1.github.io",
+  "version": "1.0.0",
+  "description": "HomeWork angular mail app with contacts",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danpan1/danpan1.github.io.git"
+  },
+  "keywords": [
+    "angular",
+    "mailapp",
+    "contactsapp",
+    "unit-test"
+  ],
+  "author": "Danil Pankrashin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danpan1/danpan1.github.io/issues"
+  },
+  "homepage": "https://github.com/danpan1/danpan1.github.io#readme",
+  "dependencies": {
+    "karma": "^0.13.21"
+  }
+}
