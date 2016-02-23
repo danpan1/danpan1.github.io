@@ -3,7 +3,15 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
   //$locationProvider.html5Mode(true); // think about rewrite rules for server
 
   $stateProvider
-    .state('mail', {
+    .state('login', {
+      url: '/login',
+      template: '<login></login>'
+    })
+    .state('app', {
+      abstract: true,
+      template: '<ui-view/>'
+    })
+    .state('app.mail', {
       reloadOnSearch: false,
       // abstract: true,
       url: '/mail/:mailBox/:messageId',
@@ -23,22 +31,18 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
       }
     })
-    .state('contacts', {
+    .state('app.contacts', {
       url: '/contacts',
       abstract: true,
       template: '<ui-view/>'
     })
-    .state('contacts.list', {
+    .state('app.contacts.list', {
       url: '/list',
       template: '<contacts-page></contacts-page>'
     })
-    .state('contacts.edit', {
+    .state('app.contacts.edit', {
       url: '/:contactId/edit',
       template: '<contact></contact>'
-    })
-    .state('login', {
-      url: '/login',
-      template: '<login></login>'
     })
 
 
