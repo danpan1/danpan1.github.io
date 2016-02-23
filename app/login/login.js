@@ -10,7 +10,7 @@ app.directive('login', function() {
       this.doLogin = (login, password) => {
 
         if (AuthService.authorize(login, password)) {
-          $state.go('mail')
+          $state.go('app.mail')
         } else {
           alert("Wrong password")
         }

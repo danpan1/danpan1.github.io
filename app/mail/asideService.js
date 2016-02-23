@@ -15,4 +15,5 @@ app.service("asideService", function () {
   this.get = () => {
     return this.aside;
   };
+  
 })

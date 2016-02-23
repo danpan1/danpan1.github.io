@@ -3,7 +3,7 @@ app.directive('contactsPage', function () {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'contacts/contactsPage.html',
+    templateUrl: 'contacts/views/contactsPage.html',
     controller: function (contactsService, localStorageService) {
       this.contacts = contactsService.get();
     },

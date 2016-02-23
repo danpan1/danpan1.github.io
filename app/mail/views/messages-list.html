@@ -1,5 +1,5 @@
  <a href="#"  
- 		ui-sref = "mail({mailBox : '{{value.folder}}', messageId : '{{value.id}}'})"
+ 		ui-sref = "app.mail.read({ messageId : '{{value.id}}'})"
     ui-sref-active="active" 
 	 class= "mail-layoyt-messages-list-box list-group-item" 
 	 ng-repeat="(key, value) in mail.messages | filter:mail.messagesListFilter" 

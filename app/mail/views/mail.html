@@ -1,17 +1,18 @@
 <!-- aside(inbox,sent,draft,trash,spam) -->
 <div class="mail-layout-Aside main-columns col-md-2 list-group">
-  <!-- <button type="button" class="btn btn-lg btn-danger" id="compose" ng-click="mail.compose.show()">Compose</button> -->
-  <aside folders = "mail.aside" call = "mail.filterByAsideFolder(title)" countFolders ="mail.countFolders"></aside>
+    <!-- <button type="button" class="btn btn-lg btn-danger" id="compose" ng-click="mail.compose.show()">Compose</button> -->
+    <aside folders="mail.aside" call="mail.filterByAsideFolder(title)" countFolders="mail.countFolders"></aside>
 </div>
 </div>
 <!-- end aside(inbox,sent,draft,trash,spam)-->
 <!-- messages list -->
 <div class="main-columns col-md-5 list-group">
-  <messages-list></messages-list>
+    <messages-list></messages-list>
 </div>
 <!-- end messages list -->
 <!-- message body -->
 <div class="main-columns col-md-5 list-group">
-  <message ng-show = "mail.message.body" message = "mail.message"></message>
+    <ui-view></ui-view>
+    <!-- <message ng-show="mail.message.body" message="mail.message"></message> -->
 </div>
 <!-- end message body -->

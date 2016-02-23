@@ -3,7 +3,7 @@ app.directive('mail', function() {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'mail/mail.html',
+    templateUrl: 'mail/views/mail.html',
     controller: function($http, $state, $filter, $stateParams, saveStateService, messagesService) {
 
       var messageId = parseInt($stateParams.messageId);
@@ -12,10 +12,19 @@ app.directive('mail', function() {
       console.log(messageId, mailBox)
       console.log(saveStateService.get(), "mail");
 
-      if (!mailBox || !messageId) {
+      if (!messageId) {
         messageId = saveStateService.get().messageId;
+      }
+      if (!mailBox) {
         mailBox = saveStateService.get().mailBox;
-        $state.go(`mail`, { 'mailBox': mailBox, 'messageId': messageId })
+      }
+
+      console.log(messageId, mailBox)
+      console.log(saveStateService.get(), "mail");
+
+      if (!mailBox || !messageId) {
+        console.log("no message no mailbox")
+        $state.go(`app.mail.read`, { 'mailBox': mailBox, 'messageId': messageId })
       }
 
       this.messages = messagesService.getAll();

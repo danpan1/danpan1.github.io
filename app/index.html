@@ -15,37 +15,11 @@
 </head>
 
 <body ng-controller="Main as main">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#"></a>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="https://github.com/danpan1/danpan1.github.io">to GitHub</a>
-        </li>
-        <li><a ui-sref="mail">Mail</a></li>
-        <li><a ui-sref="contacts.list">Contacts</a></li>
-        <li></li>
-        <li>
-        
-        </li>
-        <li>
-          <!-- <form>
-            <input type="search" class="form-control" placeholder="Search mails" ng-model="main.searchText" ng-change="main.search()"> </form> -->
-        </li>
-        <li class="navbar-right">  <a ui-sref="login" ng-click = "main.logOut()">LOG OUT</a><!-- <a ng-click="main.move('trash')" href="#contact"><img src="img/trash.png" height="30" width="30"> --></a>
-            <!-- <img ng-src="https://pp.vk.me/c616428/v616428036/8dd0/oERbNws4rnE.jpg" class="img-circle img-responsive" src="https://randomuser.me/api/portraits/thumb/men/57.jpg"> -->
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- main layout -->
-  <div class="container">
-    <ui-view>
+  <ui-view>
       <img src="../img/stopwatch-gif-preloader.gif">
-    </ui-view>
-  </div>
+  </ui-view>
   <!-- end Container main layout -->
-  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="../libs/angular-local-storage.js"></script>
   <script type="text/javascript" src="router.js"></script>
   <script type="text/javascript" src="login/login.js"></script>

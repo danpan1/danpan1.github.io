@@ -1,5 +1,5 @@
 <div id="contactEdit"><form>
-  <button type="button" class="close" aria-label="Close" ui-sref= "contacts.list"><span aria-hidden="true">&times;</span></button>
+  <!-- <button type="button" class="close" aria-label="Close" ui-sref= "app.contacts.list"><span aria-hidden="true">&times;</span></button> -->
   <div class="form-group">
     <label for="exampleInputName">Name</label>
     <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model = "contact.current.name">
@@ -16,6 +16,8 @@
     <label for="Notes">Notes</label>
     <input type="textarea" class="form-control" id="Notes" placeholder="Notes" ng-model = "contact.current.notes">
   </div>
-  <button type="submit" class="btn btn-default" ng-click = "contact.add()">Submit</button>
+  <button type="submit" class="btn btn-default" ng-click = "contact.add()">Save</button>
+  <button type="submit" class="btn btn-default" ng-click = "contact.delete()">Delete</button>
+  <button type="submit" class="btn btn-default" ui-sref= "app.contacts.list">Cancel</button>
 </form>
 </div>

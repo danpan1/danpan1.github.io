@@ -4,7 +4,7 @@ app.directive('contact', function() {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'contacts/contactEdit/contact.html',
+    templateUrl: 'contacts/views/contact.html',
     controller: function(contactsService, $stateParams, $state) {
       var self = this;
       var isNewContact = $stateParams.contactId === "new";
@@ -19,7 +19,7 @@ app.directive('contact', function() {
           contactsService.edit(this.current);
         }
 
-        $state.go("contacts.list")
+        $state.go("app.contacts.list")
       }
     },
     controllerAs: "contact"

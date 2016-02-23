@@ -1,11 +1,11 @@
 <!-- aside(inbox,sent,draft,trash,spam) -->
 <div class="mail-layout-Aside main-columns col-md-2 list-group">
-  <button type="button" class="btn btn-lg btn-danger" id="compose" ui-sref="contacts.edit({contactId : 'new'})">Add contact</button>
+  <button type="button" class="btn btn-lg btn-danger" id="compose" ui-sref="app.contacts.edit({contactId : 'new'})">Add contact</button>
 </div>
 <!-- end aside(inbox,sent,draft,trash,spam)-->
 <!-- messages list -->
 <div class="main-columns col-md-10 list-group ">
-  <a ui-sref = "contacts.edit({contactId : '{{value.id}}'})"
+  <a ui-sref = "app.contacts.edit({contactId : '{{value.id}}'})"
     ui-sref-active="active" 
   class="mail-layoyt-messages-list-box list-group-item" 
   ng-repeat="(key, value) in contactsPage.contacts | filter:main.messagesListFilter" 

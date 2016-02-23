@@ -1,7 +1,7 @@
 app.directive('messagesList', function() {
   return {
     restrict: 'E',
-    templateUrl: 'mail/message/messages-list.html'
+    templateUrl: 'mail/views/messages-list.html'
   };
 });
 
@@ -9,13 +9,13 @@ app.directive('message', function() {
   return {
     restrict: 'E',
     scope: {
-      message: "="
     },
     bindToController: true,
-    controller: function() {
-      // console.log($stateParams.messageId)
+    controller: function($stateParams, messagesService) {
+      this.message = messagesService.getOne($stateParams.messageId)
+      console.log(this.message)
     },
-    templateUrl: 'mail/message/message.html',
+    templateUrl: 'mail/views/message.html',
     controllerAs: "message"
   };
 });
