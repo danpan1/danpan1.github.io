@@ -1,23 +1,23 @@
-<div id="contactEdit"><form>
-  <!-- <button type="button" class="close" aria-label="Close" ui-sref= "app.contacts.list"><span aria-hidden="true">&times;</span></button> -->
-  <div class="form-group">
-    <label for="exampleInputName">Name</label>
-    <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model = "contact.current.name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model = "contact.current.email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputTel">Tel</label>
-    <input type="text" class="form-control" id="exampleInputTel" placeholder="Tel" ng-model = "contact.current.tel">
-  </div>
-  <div class="form-group">
-    <label for="Notes">Notes</label>
-    <input type="textarea" class="form-control" id="Notes" placeholder="Notes" ng-model = "contact.current.notes">
-  </div>
-  <button type="submit" class="btn btn-default" ng-click = "contact.add()">Save</button>
-  <button type="submit" class="btn btn-default" ng-click = "contact.delete()">Delete</button>
-  <button type="submit" class="btn btn-default" ui-sref= "app.contacts.list">Cancel</button>
-</form>
+<div id="contactEdit">
+  <form name="contactForm" ng-submit = "contact.submitFormContact()">
+    <div class="form-group">
+      <label for="exampleInputName">Name</label>
+      <input type="text" class="form-control" id="exampleInputName" placeholder="Name" ng-model = "contact.current.name" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model = "contact.current.email" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputTel">Tel</label>
+      <input type="text" class="form-control" id="exampleInputTel" placeholder="Tel" ng-model = "contact.current.tel">
+    </div>
+    <div class="form-group">
+      <label for="Notes">Notes</label>
+      <input type="textarea" class="form-control" id="Notes" placeholder="Notes" ng-model = "contact.current.notes">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="reset" class="btn btn-default" ui-sref= "app.contacts.list">Cancel</button>
+    <button type="button" class="btn btn-danger" ng-click = "contact.delete()">Delete</button>
+  </form>
 </div>

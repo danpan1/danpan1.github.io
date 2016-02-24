@@ -4,7 +4,8 @@
   "description": "HomeWork angular mail app with contacts",
   "main": "karma.conf.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "start"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,11 @@
   },
   "homepage": "https://github.com/danpan1/danpan1.github.io#readme",
   "dependencies": {
-    "karma": "^0.13.21"
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "webpack": "^1.12.14"
   }
 }

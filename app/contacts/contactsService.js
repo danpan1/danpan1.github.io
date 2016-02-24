@@ -1,4 +1,5 @@
-app.service("contactsService", function($http, $q, localStorageService) {
+app.service("contactsService", function ($http, $q, localStorageService) {
+
 
   this.contacts = [{
     "id": 1,
@@ -18,32 +19,44 @@ app.service("contactsService", function($http, $q, localStorageService) {
     "notes": "gecnj"
   }]
 
-  this.getAll = function() {
+  this.getAll = function () {
     return this.contacts;
   }
 
-  this.get = function() {
+  this.get = function () {
     if (localStorageService.get("contacts")) this.contacts = localStorageService.get("contacts");
     return this.contacts;
   }
 
-  this.add = function(contact) {
-    contact.id = this.contacts.length + 1;
+
+  this.getOne = function (index) {
+    return this.contacts[index];
+  }
+
+  this.add = function (contact, index) {
     this.contacts.push(contact);
     this.save();
   }
 
-  this.edit = function(contact) {
-    this.contacts.splice(contact.id - 1, 1, contact);
+  this.edit = function (contact, index) {
+    this.contacts.splice(index, 1, contact);
     this.save();
   }
 
-  this.save = function() {
+  this.delete = function (index) {
+    this.contacts.splice(index, 1);
+    this.save();
+  }
+
+  this.save = function () {
     console.log("Asave")
     localStorageService.set("contacts", this.contacts);
   }
 
-  //rebootLocalStorgae
+
   // this.save();
+  this.get();
+
 
 })
+

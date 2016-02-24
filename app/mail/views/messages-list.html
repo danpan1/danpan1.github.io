@@ -1,10 +1,8 @@
- <a href="#"  
- 		ui-sref = "app.mail.read({ messageId : '{{value.id}}'})"
+ <a class= "mail-layoyt-messages-list-box list-group-item" 
+ 	ui-sref = "app.mail.read({ messageId : '{{value.id}}'})"
     ui-sref-active="active" 
-	 class= "mail-layoyt-messages-list-box list-group-item" 
-	 ng-repeat="(key, value) in mail.messages | filter:mail.messagesListFilter" 
-	 ng-click = "mail.message = value"
-	 ng-class = "{active: mail.message === value}">{{value.title}}
+	ng-repeat="(key, value) in mail.messages | filter:mail.messagesListFilter" 
+	ng-click = "mail.message = value">{{value.title}}
   <h4 class="list-group-item-heading">{{value.email}}</h4>
   <p class="list-group-item-text">{{value.name}}</p>
 </a>

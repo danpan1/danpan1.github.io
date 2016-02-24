@@ -1,7 +1,7 @@
 "use strict";
-var app = angular.module("DanMail", ['LocalStorageModule', 'ui.router']);
+var app = angular.module("DanMail", ['LocalStorageModule', 'ui.router', 'ngMockE2E', 'restangular']);
 
-app.controller('Main', function(AuthService) {
+app.controller('Main', function (AuthService) {
   this.logOut = () => AuthService.logOut();
 });
 
@@ -21,3 +21,12 @@ app.filter('getByTitle', function () {
     return null;
   }
 });
+
+
+app.run(($httpBackend) => {
+  $httpBackend.whenGET(/\.html$/)
+    .passThrough();
+  $httpBackend.whenGET('/mail')
+    .respond(window.mocks.messages);
+});
+
