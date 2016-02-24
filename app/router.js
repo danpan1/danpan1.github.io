@@ -2,40 +2,32 @@
 app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
   //$locationProvider.html5Mode(true); // think about rewrite rules for server
 
-  $stateProvider
-    .state('login', {
-      url: '/login',
-      template: '<login></login>'
-    })
-    .state('app', {
-      abstract: true,
-      templateUrl: 'app.html'
-    })
-    .state('app.mail', {
-      reloadOnSearch: false,
-      // abstract: true,
+  $stateProvider.state('login', {
+    url: '/login',
+    template: '<login></login>'
+  })
+
+  .state('app', {
+    abstract: true,
+    templateUrl: 'app.html'
+  })
+
+
+  .state('app.mail', {
       url: '/mail/:mailBox',
       template: '<mail></mail>',
       resolve: {
         messagesX: function (messagesService) {
-          if (!messagesService.isDataReceived()) {
-            return messagesService.get()
-              .then((data) => {
-                console.log("resolve mail messages")
-              }, function (reason) {
-                console.log("messagesService fail request");
-              }, function (update) {
-                console.log('Got notification: ' + update);
-              });
-          }
+          return messagesService.get()
         }
-
       }
     })
     .state('app.mail.read', {
       url: '/:messageId',
       template: '<message></message>'
     })
+
+
 
   .state('app.contacts', {
       url: '/contacts',
@@ -59,7 +51,7 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     })
 
 
-  $urlRouterProvider.otherwise('mail');
+  $urlRouterProvider.otherwise('mail', { mailBox: 'inbox' });
 });
 
 app.run(function ($rootScope, $state, $stateParams, AuthService, saveStateService) {

@@ -1,27 +1,21 @@
-app.service("messagesService", function(Restangular, $q) {
-  var isDataReceived = false;
-  this.get = () => {
-    if (isDataReceived) return;
-    var deferred = $q.defer();
-    if (!isDataReceived) {
-      $http.get("dataAll.json")
-        .success((data) => {
-          this.messages = data;
-          isDataReceived = true;
-          // timeout для preloader animation (for fun)
-          // setTimeout(() => {
-            deferred.resolve(this.messages);
-          // }, 1200)
+app.service("messagesService", function(Restangular) {
 
-        })
-        .error(function(data) {
-          console.log("messagesService fail request");
-          deferred.reject(data);
-        });
-    } else {
-      deferred.resolve(this.messages);
-    }
-    return deferred.promise;
+  var isDataReceived = false;
+
+  this.get = () => {
+
+
+    if (isDataReceived) return this.messages;
+
+    return Restangular.all('mail')
+      .getList()
+      .then((messages) => {
+        console.log("getMock")
+        isDataReceived = true;
+        this.messages = messages;
+        return messages;
+      })
+
   };
 
   this.getAll = function() {

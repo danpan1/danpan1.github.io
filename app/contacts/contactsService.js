@@ -13,7 +13,6 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
         console.log("getMock")
         isDataReceived = true;
         this.contacts = contacts;
-        // this.save();
         return contacts;
       })
 
@@ -28,7 +27,6 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
 
   this.getOne = function (index) {
     return this.contacts[index];
-
     // return Restangular.one('contacts', index)
     //   .get();
   }
@@ -49,7 +47,7 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
   }
 
   this.save = function () {
-    console.log("Asave")
+    console.log("Local Saved")
     localStorageService.set("contacts", this.contacts);
   }
 
