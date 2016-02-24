@@ -16,14 +16,14 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       "libs/angular.min.js",
-      "libs/angular-mocks.js",
+      "libs/*",
       'app/app.js',
       // 'app/index-test.js',
-      "libs/angular-local-storage.js",
-      "libs/angular-ui-router.min.js",
-      'app/app.js', // все директивы и контроллеры
-      'app/*/*.js', // все директивы и контроллеры
-      'app/*/tests/*.js'
+      // 'app/*/*.js', // все директивы и контроллеры
+      // 'app/login/*.js',
+      'app/login/*.js',
+      // 'app/login/tests/login-test.js',
+      'app/login/tests/AuthService-test.js'
     ],
 
 
