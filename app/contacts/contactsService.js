@@ -53,10 +53,8 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
 
   this.isDataReceived = () => isDataReceived;
 
-
+  //delete localStorage
   // this.save();
-  // this.get();
-
 
 })
 

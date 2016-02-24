@@ -12,7 +12,7 @@ app.directive('aside', function (asideService, messagesService) {
       this.folders = asideService.get();
 
     },
-    templateUrl: 'mail/views/aside.html',
+    templateUrl: 'app/mail/views/aside.html',
     controllerAs: "aside"
   };
 });

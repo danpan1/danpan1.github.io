@@ -3,7 +3,7 @@ app.directive('mail', function() {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'mail/views/mail.html',
+    templateUrl: 'app/mail/views/mail.html',
     controller: function($http, $state, $filter, $stateParams, saveStateService, messagesService) {
 
       var messageId = parseInt($stateParams.messageId);

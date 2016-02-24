@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Mon Feb 15 2016 18:52:27 GMT+0300 (MSK)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -17,11 +17,13 @@ module.exports = function(config) {
     files: [
       "libs/angular.min.js",
       "libs/angular-mocks.js",
-      'app/index.js',
-      'app/index-test.js',
-      "libs/*.js",
-      '*/*.js',
-      '*/*/*.js'
+      'app/app.js',
+      // 'app/index-test.js',
+      "libs/angular-local-storage.js",
+      "libs/angular-ui-router.min.js",
+      'app/app.js', // все директивы и контроллеры
+      'app/*/*.js', // все директивы и контроллеры
+      'app/*/tests/*.js'
     ],
 
 
@@ -71,3 +73,4 @@ module.exports = function(config) {
     concurrency: Infinity
   })
 }
+

@@ -4,7 +4,7 @@ app.directive('contact', function () {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'contacts/views/contact.html',
+    templateUrl: 'app/contacts/views/contact.html',
     controller: function (contactsService, $stateParams, $state) {
 
       // if (!contactsService.isDataReceived) contactsService.getAll();

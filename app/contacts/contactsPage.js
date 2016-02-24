@@ -3,7 +3,7 @@ app.directive('contactsPage', function () {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'contacts/views/contactsPage.html',
+    templateUrl: 'app/contacts/views/contactsPage.html',
     controller: function (contactsService) {
 
       //получает напрямую из сервиса без запроса. запрос был в resolve

@@ -9,7 +9,7 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
   .state('app', {
     abstract: true,
-    templateUrl: 'app.html'
+    templateUrl: 'app/app.html'
   })
 
 
@@ -35,7 +35,6 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
       template: '<ui-view/>',
       resolve: {
         contacts: function (contactsService) {
-          console.log("resolve mail messages")
           return contactsService.getAll();
         }
       }
