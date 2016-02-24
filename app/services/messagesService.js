@@ -1,4 +1,4 @@
-app.service("messagesService", function($http, $q) {
+app.service("messagesService", function(Restangular, $q) {
   var isDataReceived = false;
   this.get = () => {
     if (isDataReceived) return;

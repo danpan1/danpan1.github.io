@@ -6,9 +6,13 @@ app.directive('contact', function () {
     bindToController: true,
     templateUrl: 'contacts/views/contact.html',
     controller: function (contactsService, $stateParams, $state) {
+
+      // if (!contactsService.isDataReceived) contactsService.getAll();
       
       var contactId = $stateParams.contactId;
-      if (contactId !== "new") this.current = contactsService.getOne(contactId);
+      if (contactId !== "new") {
+        this.current = contactsService.getOne(contactId)
+      }
 
       // console.log(this.current);
 

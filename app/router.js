@@ -36,14 +36,22 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
       url: '/:messageId',
       template: '<message></message>'
     })
-    .state('app.contacts', {
+
+  .state('app.contacts', {
       url: '/contacts',
       abstract: true,
-      template: '<ui-view/>'
+      template: '<ui-view/>',
+      resolve: {
+        contacts: function (contactsService) {
+          console.log("resolve mail messages")
+          return contactsService.getAll();
+        }
+      }
     })
     .state('app.contacts.list', {
       url: '/list',
       template: '<contacts-page></contacts-page>'
+
     })
     .state('app.contacts.edit', {
       url: '/:contactId/edit',

@@ -35,6 +35,7 @@ app.directive('mail', function() {
         this.messagesListFilter = this.searchText;
       };
 
+      // TODO
       //move message to selectedFolder
       this.move = (folder) => {
         //присваиваем новый фолдер

@@ -1,36 +1,36 @@
-app.service("contactsService", function ($http, $q, localStorageService) {
+app.service("contactsService", function (Restangular, $q, localStorageService) {
 
-
-  this.contacts = [{
-    "id": 1,
-    "avatar": "https://pp.vk.me/c616428/v616428036/8dd0/oERbNws4rnE.jpg",
-    "name": "Danil Hin",
-    "email": "danpan123@123yandex.ru",
-    "tel": "31231232",
-    "dateOfBirth": "03/12/1924",
-    "notes": "Прибалтика Дома"
-  }, {
-    "id": 2,
-    "avatar": "https://pp.vk.me/c607330/v607330530/470a/P3srj5eL4Gg.jpg",
-    "name": "Kar Hin",
-    "email": "kar@123yandex.ru",
-    "tel": "22",
-    "dateOfBirth": "03/12/1111",
-    "notes": "gecnj"
-  }]
+  var isDataReceived = false;
 
   this.getAll = function () {
-    return this.contacts;
+
+    if (isDataReceived) return this.contacts;
+    if (localStorageService.get("contacts")) return this.getLocalAll();
+
+    return Restangular.all('contacts')
+      .getList()
+      .then((contacts) => {
+        console.log("getMock")
+        isDataReceived = true;
+        this.contacts = contacts;
+        // this.save();
+        return contacts;
+      })
+
   }
 
-  this.get = function () {
-    if (localStorageService.get("contacts")) this.contacts = localStorageService.get("contacts");
+  this.getLocalAll = function () {
+    console.log("getLocalAll")
+    this.contacts = localStorageService.get("contacts");
     return this.contacts;
   }
 
 
   this.getOne = function (index) {
     return this.contacts[index];
+
+    // return Restangular.one('contacts', index)
+    //   .get();
   }
 
   this.add = function (contact, index) {
@@ -53,9 +53,11 @@ app.service("contactsService", function ($http, $q, localStorageService) {
     localStorageService.set("contacts", this.contacts);
   }
 
+  this.isDataReceived = () => isDataReceived;
+
 
   // this.save();
-  this.get();
+  // this.get();
 
 
 })

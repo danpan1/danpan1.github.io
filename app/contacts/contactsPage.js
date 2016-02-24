@@ -4,9 +4,13 @@ app.directive('contactsPage', function () {
     scope: {},
     bindToController: true,
     templateUrl: 'contacts/views/contactsPage.html',
-    controller: function (contactsService, localStorageService) {
-      this.contacts = contactsService.get();
+    controller: function (contactsService) {
+
+      //получает напрямую из сервиса без запроса. запрос был в resolve
+      this.contacts = contactsService.getAll();
+      
     },
     controllerAs: "contactsPage"
   };
 });
+

@@ -1,4 +1,4 @@
-window.mocks = {};
+if (!window.mocks) window.mocks = {};
 window.mocks.messages = [{
   "postId": 1,
   "folder": "inbox",
