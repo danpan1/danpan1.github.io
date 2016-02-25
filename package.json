@@ -4,7 +4,7 @@
   "description": "HomeWork angular mail app with contacts",
   "main": "karma.conf.js",
   "scripts": {
-    "test": "test",
+    "test": "node_modules/.bin/karma start",
     "start": "start"
   },
   "repository": {
