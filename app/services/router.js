@@ -50,7 +50,7 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     })
 
 
-  $urlRouterProvider.otherwise('mail', { mailBox: 'inbox' });
+  $urlRouterProvider.otherwise('app.mail', { mailBox: 'inbox' });
 });
 
 app.run(function ($rootScope, $state, $stateParams, AuthService, saveStateService) {
