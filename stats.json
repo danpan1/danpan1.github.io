@@ -1,0 +1,409 @@
+development
+development
+development
+{
+  "errors": [],
+  "warnings": [],
+  "version": "1.12.14",
+  "hash": "cad464ab753b81cf76ce",
+  "time": 918,
+  "publicPath": "",
+  "assetsByChunkName": {
+    "about": "about.js",
+    "home": "home.js",
+    "common": "common.js"
+  },
+  "assets": [
+    {
+      "name": "about.js",
+      "size": 1208,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "about"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "home.js",
+      "size": 1202,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "home"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "common.js",
+      "size": 15761,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "common"
+      ],
+      "emitted": true
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 271,
+      "names": [
+        "about"
+      ],
+      "files": [
+        "about.js"
+      ],
+      "hash": "5a6e6a4873b68a074fc3",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+          "name": "./about.js",
+          "index": 0,
+          "index2": 2,
+          "size": 271,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 354,
+            "building": 431,
+            "dependencies": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "'use strict';\n\nvar _welcome = require('./welcome');\n\nvar _welcome2 = _interopRequireDefault(_welcome);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _welcome2.default)(\"about\");\n\nexports.welcome = _welcome2.default;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+          "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+          "moduleName": "./about.js",
+          "loc": "",
+          "name": "about",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 270,
+      "names": [
+        "home"
+      ],
+      "files": [
+        "home.js"
+      ],
+      "hash": "5ec94a7ff22d0443ddf4",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+          "name": "./home.js",
+          "index": 3,
+          "index2": 3,
+          "size": 270,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 20,
+            "building": 751
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "'use strict';\n\nvar _welcome = require('./welcome');\n\nvar _welcome2 = _interopRequireDefault(_welcome);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _welcome2.default)(\"home\");\n\nexports.welcome = _welcome2.default;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+          "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+          "moduleName": "./home.js",
+          "loc": "",
+          "name": "home",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 2337,
+      "names": [
+        "common"
+      ],
+      "files": [
+        "common.js"
+      ],
+      "hash": "d0362d9d0e6c782e5bcb",
+      "parents": [],
+      "modules": [
+        {
+          "id": 1,
+          "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+          "name": "./welcome.js",
+          "index": 1,
+          "index2": 1,
+          "size": 256,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+          "profile": {
+            "factory": 19,
+            "building": 27
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+              "module": "./home.js",
+              "moduleName": "./home.js",
+              "type": "cjs require",
+              "userRequest": "./welcome",
+              "loc": "3:15-35"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+              "module": "./about.js",
+              "moduleName": "./about.js",
+              "type": "cjs require",
+              "userRequest": "./welcome",
+              "loc": "3:15-35"
+            }
+          ],
+          "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = function (message) {\n\n  if (NODE_ENV == 'development') {\n    console.log(message);\n  }\n\n  alert(\"USER\" + process.env.USER);\n  alert('Welcome ' + message);\n};"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/node_modules/process/browser.js",
+          "name": "../~/process/browser.js",
+          "index": 2,
+          "index2": 0,
+          "size": 2081,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+          "profile": {
+            "factory": 2,
+            "building": 68
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+              "module": "./welcome.js",
+              "moduleName": "./welcome.js",
+              "type": "cjs require",
+              "userRequest": "process",
+              "loc": "1:0-74"
+            }
+          ],
+          "source": "'use strict';\n\n// shim for using process in browser\n\nvar process = module.exports = {};\nvar queue = [];\nvar draining = false;\nvar currentQueue;\nvar queueIndex = -1;\n\nfunction cleanUpNextTick() {\n    draining = false;\n    if (currentQueue.length) {\n        queue = currentQueue.concat(queue);\n    } else {\n        queueIndex = -1;\n    }\n    if (queue.length) {\n        drainQueue();\n    }\n}\n\nfunction drainQueue() {\n    if (draining) {\n        return;\n    }\n    var timeout = setTimeout(cleanUpNextTick);\n    draining = true;\n\n    var len = queue.length;\n    while (len) {\n        currentQueue = queue;\n        queue = [];\n        while (++queueIndex < len) {\n            if (currentQueue) {\n                currentQueue[queueIndex].run();\n            }\n        }\n        queueIndex = -1;\n        len = queue.length;\n    }\n    currentQueue = null;\n    draining = false;\n    clearTimeout(timeout);\n}\n\nprocess.nextTick = function (fun) {\n    var args = new Array(arguments.length - 1);\n    if (arguments.length > 1) {\n        for (var i = 1; i < arguments.length; i++) {\n            args[i - 1] = arguments[i];\n        }\n    }\n    queue.push(new Item(fun, args));\n    if (queue.length === 1 && !draining) {\n        setTimeout(drainQueue, 0);\n    }\n};\n\n// v8 likes predictible objects\nfunction Item(fun, array) {\n    this.fun = fun;\n    this.array = array;\n}\nItem.prototype.run = function () {\n    this.fun.apply(null, this.array);\n};\nprocess.title = 'browser';\nprocess.browser = true;\nprocess.env = {};\nprocess.argv = [];\nprocess.version = ''; // empty string to avoid regexp issues\nprocess.versions = {};\n\nfunction noop() {}\n\nprocess.on = noop;\nprocess.addListener = noop;\nprocess.once = noop;\nprocess.off = noop;\nprocess.removeListener = noop;\nprocess.removeAllListeners = noop;\nprocess.emit = noop;\n\nprocess.binding = function (name) {\n    throw new Error('process.binding is not supported');\n};\n\nprocess.cwd = function () {\n    return '/';\n};\nprocess.chdir = function (dir) {\n    throw new Error('process.chdir is not supported');\n};\nprocess.umask = function () {\n    return 0;\n};"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": []
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+      "name": "./about.js",
+      "index": 0,
+      "index2": 2,
+      "size": 271,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 354,
+        "building": 431,
+        "dependencies": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "'use strict';\n\nvar _welcome = require('./welcome');\n\nvar _welcome2 = _interopRequireDefault(_welcome);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _welcome2.default)(\"about\");\n\nexports.welcome = _welcome2.default;"
+    },
+    {
+      "id": 0,
+      "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+      "name": "./home.js",
+      "index": 3,
+      "index2": 3,
+      "size": 270,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 20,
+        "building": 751
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "'use strict';\n\nvar _welcome = require('./welcome');\n\nvar _welcome2 = _interopRequireDefault(_welcome);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _welcome2.default)(\"home\");\n\nexports.welcome = _welcome2.default;"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+      "name": "./welcome.js",
+      "index": 1,
+      "index2": 1,
+      "size": 256,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+      "profile": {
+        "factory": 19,
+        "building": 27
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/home.js",
+          "module": "./home.js",
+          "moduleName": "./home.js",
+          "type": "cjs require",
+          "userRequest": "./welcome",
+          "loc": "3:15-35"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/about.js",
+          "module": "./about.js",
+          "moduleName": "./about.js",
+          "type": "cjs require",
+          "userRequest": "./welcome",
+          "loc": "3:15-35"
+        }
+      ],
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = function (message) {\n\n  if (NODE_ENV == 'development') {\n    console.log(message);\n  }\n\n  alert(\"USER\" + process.env.USER);\n  alert('Welcome ' + message);\n};"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/node_modules/process/browser.js",
+      "name": "../~/process/browser.js",
+      "index": 2,
+      "index2": 0,
+      "size": 2081,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+      "profile": {
+        "factory": 2,
+        "building": 68
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/Danpan/danpan1.github.io/node_modules/babel-loader/index.js?{\"plugins\":[\"transform-runtime\"],\"presets\":[\"es2015\"]}!/Users/Danpan/danpan1.github.io/frontend/welcome.js",
+          "module": "./welcome.js",
+          "moduleName": "./welcome.js",
+          "type": "cjs require",
+          "userRequest": "process",
+          "loc": "1:0-74"
+        }
+      ],
+      "source": "'use strict';\n\n// shim for using process in browser\n\nvar process = module.exports = {};\nvar queue = [];\nvar draining = false;\nvar currentQueue;\nvar queueIndex = -1;\n\nfunction cleanUpNextTick() {\n    draining = false;\n    if (currentQueue.length) {\n        queue = currentQueue.concat(queue);\n    } else {\n        queueIndex = -1;\n    }\n    if (queue.length) {\n        drainQueue();\n    }\n}\n\nfunction drainQueue() {\n    if (draining) {\n        return;\n    }\n    var timeout = setTimeout(cleanUpNextTick);\n    draining = true;\n\n    var len = queue.length;\n    while (len) {\n        currentQueue = queue;\n        queue = [];\n        while (++queueIndex < len) {\n            if (currentQueue) {\n                currentQueue[queueIndex].run();\n            }\n        }\n        queueIndex = -1;\n        len = queue.length;\n    }\n    currentQueue = null;\n    draining = false;\n    clearTimeout(timeout);\n}\n\nprocess.nextTick = function (fun) {\n    var args = new Array(arguments.length - 1);\n    if (arguments.length > 1) {\n        for (var i = 1; i < arguments.length; i++) {\n            args[i - 1] = arguments[i];\n        }\n    }\n    queue.push(new Item(fun, args));\n    if (queue.length === 1 && !draining) {\n        setTimeout(drainQueue, 0);\n    }\n};\n\n// v8 likes predictible objects\nfunction Item(fun, array) {\n    this.fun = fun;\n    this.array = array;\n}\nItem.prototype.run = function () {\n    this.fun.apply(null, this.array);\n};\nprocess.title = 'browser';\nprocess.browser = true;\nprocess.env = {};\nprocess.argv = [];\nprocess.version = ''; // empty string to avoid regexp issues\nprocess.versions = {};\n\nfunction noop() {}\n\nprocess.on = noop;\nprocess.addListener = noop;\nprocess.once = noop;\nprocess.off = noop;\nprocess.removeListener = noop;\nprocess.removeAllListeners = noop;\nprocess.emit = noop;\n\nprocess.binding = function (name) {\n    throw new Error('process.binding is not supported');\n};\n\nprocess.cwd = function () {\n    return '/';\n};\nprocess.chdir = function (dir) {\n    throw new Error('process.chdir is not supported');\n};\nprocess.umask = function () {\n    return 0;\n};"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

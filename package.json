@@ -24,11 +24,18 @@
   },
   "homepage": "https://github.com/danpan1/danpan1.github.io#readme",
   "dependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.5.2",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-runtime": "^6.5.0",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.9.1",
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
+    "ng-cache-loader": "0.0.15",
     "webpack": "^1.12.14"
   }
 }
