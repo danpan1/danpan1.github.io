@@ -2,6 +2,10 @@
     overflow: scroll;
     max-height: 835px;
 }
+.rowLogin{
+
+    background: url('../img/1.jpg');
+}
 #contactEdit{
     width: 550px;
     height: 480px;

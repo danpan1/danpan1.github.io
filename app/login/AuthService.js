@@ -7,7 +7,7 @@ const AuthService = function(localStorageService) {
 
   this.authorize = (login, password) => {
 
-    if (login == 1 && password == 1) {
+    if (login == 'admin' && password == 123) {
       localStorageService.set("isAuthorized", true)
       isLogin = true;
     } else {

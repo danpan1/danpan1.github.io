@@ -60,7 +60,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
 
-        include: __dirname + "/app",
+        // include: __dirname + "/app",
 
         query: {
           // plugins: ['transform-runtime'],
@@ -89,4 +89,3 @@ if (NODE_ENV == "production") {
     })
   )
 }
-
