@@ -1,7 +1,8 @@
 "use strict";
 
-// import angular from "angular";
-// import "angular-mocks/angular-mocks";
+import angular from "angular";
+import _ from "lodash";
+import "angular-mocks/ngMockE2E";
 import "./login";
 import "./contacts";
 import "./mail";
@@ -9,23 +10,21 @@ import AuthService from './login/AuthService.js';
 import saveStateService from './services/saveStateService.js';
 
 import appTempalte from "./app.html";
-// import LocalStorageModule from 'angular-local-storage';
-// import angular from 'angular';
-// import uirouter from 'angular-ui-router';
-
-// var testsContext = require.context(".", true, /.spec$/);
-// testsContext.keys().forEach(testsContext);
+import LocalStorageModule from 'angular-local-storage';
+import uirouter from 'angular-ui-router';
+import 'restangular';
 
 
 var app = angular.module("DanMail", [
   'LocalStorageModule',
-  'ui.router',
+  uirouter,
   'ngMockE2E',
   'restangular',
   'contacts',
   'login',
-  'mail'
+  'mail',
 ]);
+
 
 app.service('AuthService', ['localStorageService', AuthService])
 app.service('saveStateService', ['$stateParams', '$state', saveStateService])
@@ -38,7 +37,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
     template: appTempalte
   })
 
-  // $urlRouterProvider.otherwise('mail/inbox');
+  $urlRouterProvider.otherwise('mail/inbox');
 
 });
 
@@ -48,9 +47,6 @@ app.run(function($rootScope, $state, $stateParams, AuthService, saveStateService
   $rootScope.$on('$stateChangeStart', function(event, toState, fromParams) {
 
     console.log('toState', toState, 'fromParams', fromParams);
-    console.log(!AuthService.isAuthorized());
-    console.log(!AuthService.isAuthorized() && toState.name !== 'login');
-    // debugger
     if (!AuthService.isAuthorized() && toState.name !== 'login') {
 
       saveStateService.save(fromParams.mailBox, fromParams.messageId);
@@ -76,6 +72,7 @@ app.run(($httpBackend) => {
   $httpBackend.whenGET('/contacts')
     //   // .respond(404,'');
     .respond(window.mocks.contacts);
+    //TODO как делать restangular.one . backend не понимает что такое :id
   // $httpBackend.whenGET('/contacts/:id')
   //   .respond(function (method, url, data, headers, params) {
   //     return [200, window.mocks.contacts[Number(params.id)]];

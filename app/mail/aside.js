@@ -15,7 +15,7 @@ let aside = function(asideService, messagesService) {
 
     }],
     template: asideTemplate,
-    controllerAs: "aside"
+    controllerAs: "a side"
   };
 };
 

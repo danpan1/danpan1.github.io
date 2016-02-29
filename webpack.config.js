@@ -39,7 +39,8 @@ module.exports = {
     // new webpack.optimize.CommonsChunkPlugin({ name: 'common' }),
     new ngAnnotatePlugin(),
     // new webpack.ProvidePlugin({
-    //   'angular': 'angular'
+      // 'angular': 'angular',
+      // _: "lodash"
     // })
 
   ],
@@ -60,7 +61,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
 
-        // include: __dirname + "/app",
+        include: __dirname + "/app",
 
         query: {
           // plugins: ['transform-runtime'],
@@ -71,7 +72,7 @@ module.exports = {
       { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' }
     ],
 
-    noParse: /angular\/angular.js/
+    noParse: /angular\/angular.js/,
 
   },
 }
@@ -89,3 +90,4 @@ if (NODE_ENV == "production") {
     })
   )
 }
+
