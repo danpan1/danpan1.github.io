@@ -1,4 +1,4 @@
-app.service('AuthService', function (localStorageService) {
+const AuthService = function(localStorageService) {
   var isLogin = false;
 
   if (localStorageService.get("isAuthorized")) {
@@ -23,5 +23,6 @@ app.service('AuthService', function (localStorageService) {
   }
 
   this.isAuthorized = () => isLogin;
-});
+}
 
+export default AuthService;

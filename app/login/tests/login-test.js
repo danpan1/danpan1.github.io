@@ -1,12 +1,15 @@
-describe('DanMail', function () {
+describe('login', function() {
 
-  beforeEach(module('DanMail'));
+  // beforeEach(module('DanMail'));
+  beforeEach(angular.mock.module());
+  // beforeEach(module('login'));
+  
 
-  describe('login', function () {
+  describe('loginCtr', function() {
 
     var state, AuthService, login;
 
-    beforeEach(inject(function (_AuthService_, _$state_, $controller) {
+    beforeEach(inject(function(_AuthService_, _$state_, $controller) {
       AuthService = _AuthService_;
       state = _$state_;
 
@@ -18,11 +21,11 @@ describe('DanMail', function () {
       spyOn(state, 'go')
         .and.returnValue(true);
 
-      login = $controller('login', { AuthService: AuthService, $state: state });
+      login = $controller('login', { $state: state, AuthService: AuthService });
 
     }));
 
-    it('should call AuthService.isAuthorized before all', inject(function (AuthService, state) {
+    it('should call AuthService.isAuthorized before all', inject(function(state, AuthService) {
 
       // expect(state.go)
       // .toHaveBeenCalled();

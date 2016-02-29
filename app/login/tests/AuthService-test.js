@@ -1,6 +1,7 @@
-describe('DanMail', function() {
+describe('login', function() {
 
-  beforeEach(module('DanMail'));
+  // beforeEach(angular.mock.module());
+  beforeEach(module('app'));
 
   describe('authService.authorize', function() {
 
@@ -8,7 +9,7 @@ describe('DanMail', function() {
     var login = 1;
     var pass = 1;
 
-    beforeEach(inject(function(_AuthService_, _localStorageService_) {
+    beforeEach(angular.mock.inject(function(_AuthService_, _localStorageService_) {
 
       localStorageService = _localStorageService_;
       AuthService = _AuthService_;
@@ -18,34 +19,34 @@ describe('DanMail', function() {
 
     }));
 
-    it('should return true for (1,1) user', inject(function(AuthService) {
+    it('should return true for (1,1) user', angular.mock.inject(function(AuthService) {
 
       expect(AuthService.authorize(login, pass)).toBe(true);
 
     }));
 
 
-    it('should return false for (2,2) user', inject(function(AuthService) {
+    it('should return false for (2,2) user', angular.mock.inject(function(AuthService) {
 
       expect(AuthService.authorize(2, 4)).toBe(false);
 
     }));
 
-    it('should return isLogin=true after authorize', inject(function(AuthService) {
+    it('should return isLogin=true after authorize', angular.mock.inject(function(AuthService) {
 
       AuthService.authorize(login, pass)
       expect(AuthService.isAuthorized()).toBe(true);
 
     }));
 
-    it('should call saveToLocalStorage isLogin=true', inject(function(AuthService) {
+    it('should call saveToLocalStorage isLogin=true', angular.mock.inject(function(AuthService) {
 
       AuthService.authorize(login, pass)
       expect(localStorageService.set).toHaveBeenCalled();
 
     }));
 
-    it('should logOut isLogin=false', inject(function(AuthService) {
+    it('should logOut isLogin=false', angular.mock.inject(function(AuthService) {
 
       AuthService.logOut()
       expect(AuthService.isAuthorized()).toBe(false);

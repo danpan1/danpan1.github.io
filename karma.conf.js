@@ -1,7 +1,13 @@
 // Karma configuration
 // Generated on Mon Feb 15 2016 18:52:27 GMT+0300 (MSK)
 
-module.exports = function (config) {
+// var path = require('path');
+var webpackConfig = require('./webpack.config');
+// var entry = path.resolve(webpackConfig.entry.app);
+// var preprocessors = {};
+// preprocessors[entry] = ['webpack'];
+
+module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -15,13 +21,22 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
+
+
+      //bundle webpackzaaaa
+
       "libs/angular.min.js",
       "libs/*",
-      'app/app.js',
+      // 'app/app.js',
       // 'app/index-test.js',
       // 'app/*/*.js', // все директивы и контроллеры
       // 'app/login/*.js',
-      'app/login/*.js',
+      // 'app/login/*.js',
+      // 'app/login/tests/login-test.js',
+      // 'app/login/tests/AuthService-test.js',
+      // "libs/angular-mocks.js",
+      // entry,
+      'app/index.js',
       // 'app/login/tests/login-test.js',
       'app/login/tests/AuthService-test.js'
     ],
@@ -31,10 +46,13 @@ module.exports = function (config) {
     exclude: [],
 
 
+    webpack: webpackConfig,
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
 
+    preprocessors: {
+      'app/index.js': ['webpack']
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -70,7 +88,13 @@ module.exports = function (config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+    plugins: [
+      require('karma-webpack'),
+      'karma-jasmine',
+      'karma-chrome-launcher'
+    ]
+
   })
 }
 

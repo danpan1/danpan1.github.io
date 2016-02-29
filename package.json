@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/danpan1/danpan1.github.io#readme",
   "dependencies": {
+    "angular": "^1.5.0",
+    "angular-local-storage": "^0.2.6",
+    "angular-mocks": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.5.2",
@@ -35,6 +39,8 @@
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
     "ng-cache-loader": "0.0.15",
     "webpack": "^1.12.14"
   }
