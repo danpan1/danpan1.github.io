@@ -22,11 +22,11 @@
                         <form role="form" class="login-form" ng-submit = "login.doLogin()">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Username</label>
-                                <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" ng-model="login.login">
+                                <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username" ng-model="login.login" required>
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Password</label>
-                                <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" ng-model="login.password">
+                                <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" ng-model="login.password" required>
                             </div>
                             <button type="submit" class="btn" >Sign in!</button>
                         </form>

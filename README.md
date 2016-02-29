@@ -14,6 +14,7 @@ npm install
 npm test
  
 ## TODO
+* Wrong password notification
 * Test coverage
 * 75% Test istambul
 * Interceptors

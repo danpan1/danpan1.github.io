@@ -8,7 +8,7 @@
     <a ui-sref="app.contacts.edit({contactId : '{{key}}'})" 
     ui-sref-active="active" 
     class="mail-layoyt-messages-list-box list-group-item" 
-    ng-repeat="(key, value) in contactsPage.contacts | filter:main.messagesListFilter" 
+    ng-repeat="(key, value) in contactsPage.contacts | filter:main.messagesListFilter | orderBy:'name'"
     ng-click="contactsPage.show(value)">
         <h4 class="list-group-item-heading">{{value.name}}</h4>
         <p class="list-group-item-text">{{value.email}}</p>

@@ -1,14 +1,17 @@
 "use strict";
-app.directive('contact', function () {
+
+import contactTemplate from './views/contact.html'
+
+let contact = function() {
   return {
     restrict: 'E',
     scope: {},
     bindToController: true,
-    templateUrl: 'app/contacts/views/contact.html',
-    controller: function (contactsService, $stateParams, $state) {
+    template: contactTemplate,
+    controller: ['contactsService', '$stateParams', '$state', function(contactsService, $stateParams, $state) {
 
       // if (!contactsService.isDataReceived) contactsService.getAll();
-      
+
       var contactId = $stateParams.contactId;
       if (contactId !== "new") {
         this.current = contactsService.getOne(contactId)
@@ -41,8 +44,10 @@ app.directive('contact', function () {
 
       }
 
-    },
+    }],
     controllerAs: "contact"
   };
-});
+};
+
+export default contact;
 

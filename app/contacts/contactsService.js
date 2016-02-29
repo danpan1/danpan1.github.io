@@ -1,8 +1,8 @@
-app.service("contactsService", function (Restangular, $q, localStorageService) {
+let contactsService = function(Restangular, localStorageService) {
 
   var isDataReceived = false;
 
-  this.getAll = function () {
+  this.getAll = function() {
 
     if (isDataReceived) return this.contacts;
     if (localStorageService.get("contacts")) return this.getLocalAll();
@@ -18,35 +18,35 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
 
   }
 
-  this.getLocalAll = function () {
+  this.getLocalAll = function() {
     console.log("getLocalAll")
     this.contacts = localStorageService.get("contacts");
     return this.contacts;
   }
 
 
-  this.getOne = function (index) {
+  this.getOne = function(index) {
     return this.contacts[index];
     // return Restangular.one('contacts', index)
     //   .get();
   }
 
-  this.add = function (contact, index) {
+  this.add = function(contact, index) {
     this.contacts.push(contact);
     this.save();
   }
 
-  this.edit = function (contact, index) {
+  this.edit = function(contact, index) {
     this.contacts.splice(index, 1, contact);
     this.save();
   }
 
-  this.delete = function (index) {
+  this.delete = function(index) {
     this.contacts.splice(index, 1);
     this.save();
   }
 
-  this.save = function () {
+  this.save = function() {
     console.log("Local Saved")
     localStorageService.set("contacts", this.contacts);
   }
@@ -56,5 +56,7 @@ app.service("contactsService", function (Restangular, $q, localStorageService) {
   //delete localStorage
   // this.save();
 
-})
+};
+
+export default contactsService;
 

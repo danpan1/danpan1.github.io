@@ -3,6 +3,7 @@
 // import angular from "angular";
 // import "angular-mocks/angular-mocks";
 import "./login";
+import "./contacts";
 import "./mail";
 import AuthService from './login/AuthService.js';
 import saveStateService from './services/saveStateService.js';
@@ -21,6 +22,7 @@ var app = angular.module("DanMail", [
   'ui.router',
   'ngMockE2E',
   'restangular',
+  'contacts',
   'login',
   'mail'
 ]);
@@ -40,14 +42,6 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
 });
 
-app.config(['$stateProvider', function($stateProvider) {
-
-  $stateProvider.state('login', {
-    url: '/login',
-    template: '<login></login>'
-  });
-
-}]);
 
 app.run(function($rootScope, $state, $stateParams, AuthService, saveStateService) {
 
