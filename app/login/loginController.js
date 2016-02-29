@@ -1,6 +1,6 @@
 const loginController = function($state, AuthService) {
 
-  if (AuthService.isAuthorized) {
+  if (AuthService.isAuthorized()) {
     $state.go('app.mail', { mailBox: 'inbox' })
   }
 

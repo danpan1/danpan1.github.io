@@ -1,4 +1,5 @@
-let contacts = [{
+if (!window.mocks) window.mocks = {};
+window.mocks.contacts = [{
   "id": 1,
   "avatar": "https://pp.vk.me/c616428/v616428036/8dd0/oERbNws4rnE.jpg",
   "name": "Danil Hin",
@@ -16,5 +17,4 @@ let contacts = [{
   "notes": "gecnj"
 }]
 
-export default contacts;
 

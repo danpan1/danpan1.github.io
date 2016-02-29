@@ -22,7 +22,6 @@ mail.config(['$stateProvider', function($stateProvider) {
 }]);
 
 import messagesService from '../services/messagesService.js';
-import saveStateService from '../services/saveStateService.js';
 import mailTemplate from './views/mail.html';
 
 import messageTemplate from './views/message.html';
@@ -33,7 +32,6 @@ import mailController from './mailController.js';
 
 //TODO корректно ли тут присваивать mail.service или надо app.service
 mail.service('messagesService', ['Restangular', messagesService])
-mail.service('saveStateService', ['$stateParams', '$state', saveStateService])
 mail.service('asideService', asideService)
 
 

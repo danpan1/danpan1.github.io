@@ -1,4 +1,5 @@
-let messages = [{
+if (!window.mocks) window.mocks = {};
+window.mocks.messages = [{
   "postId": 1,
   "folder": "inbox",
   "id": 0,
@@ -2464,5 +2465,4 @@ let messages = [{
   "body": "quo nisi impedit velit repellendus esse itaque ut saepe\nvoluptatibus occaecati ab eaque dolores\nmaxime alias velit ducimus placeat sit laudantium quia\ncorrupti doloremque ut"
 }]
 
-export default messages;
 

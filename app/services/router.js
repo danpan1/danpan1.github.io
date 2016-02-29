@@ -27,21 +27,3 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
 
 
-app.run(function ($rootScope, $state, $stateParams, AuthService, saveStateService) {
-
-  $rootScope.$on('$stateChangeStart', function (event, toState, fromParams) {
-
-    // console.log(toState, fromParams);
-    if (!AuthService.isAuthorized() && toState.name !== 'login') {
-
-      saveStateService.save(fromParams.mailBox, fromParams.messageId);
-
-      event.preventDefault();
-      alert("Вы должны авторизоваться");
-      $state.go('login');
-    }
-
-  })
-
-})
-
