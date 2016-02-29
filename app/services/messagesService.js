@@ -1,4 +1,4 @@
-app.service("messagesService", function(Restangular) {
+const messagesService = function(Restangular) {
 
   var isDataReceived = false;
 
@@ -40,4 +40,7 @@ app.service("messagesService", function(Restangular) {
 
   this.isDataReceived = () => isDataReceived;
 
-})
+}
+
+export default messagesService;
+

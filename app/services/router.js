@@ -2,30 +2,6 @@
 app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
   //$locationProvider.html5Mode(true); // think about rewrite rules for server
 
-  $stateProvider.state('login', {
-    url: '/login',
-    template: '<login></login>'
-  })
-
-  .state('app', {
-    abstract: true,
-    templateUrl: 'app/app.html'
-  })
-
-
-  .state('app.mail', {
-      url: '/mail/:mailBox',
-      template: '<mail></mail>',
-      resolve: {
-        messagesX: function (messagesService) {
-          return messagesService.get()
-        }
-      }
-    })
-    .state('app.mail.read', {
-      url: '/:messageId',
-      template: '<message></message>'
-    })
 
 
 
@@ -50,8 +26,6 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     })
 
 
-  $urlRouterProvider.otherwise('mail/inbox');
-});
 
 app.run(function ($rootScope, $state, $stateParams, AuthService, saveStateService) {
 

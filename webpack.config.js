@@ -36,7 +36,7 @@ module.exports = {
       NODE_ENV: JSON.stringify(NODE_ENV),
       LANG: JSON.stringify('ru')
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'common' }),
+    // new webpack.optimize.CommonsChunkPlugin({ name: 'common' }),
     new ngAnnotatePlugin(),
     // new webpack.ProvidePlugin({
     //   'angular': 'angular'

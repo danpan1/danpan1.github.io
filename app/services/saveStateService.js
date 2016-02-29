@@ -1,4 +1,4 @@
-app.service("saveStateService", function ($stateParams, $state) {
+const saveStateService = function($stateParams, $state) {
 
   this.save = (mailBox, messageId) => {
 
@@ -7,7 +7,7 @@ app.service("saveStateService", function ($stateParams, $state) {
 
   }
 
-  this.get = function () {
+  this.get = function() {
 
     if (!this.mailBox || !this.messageId) {
       this.mailBox = "inbox";
@@ -21,4 +21,7 @@ app.service("saveStateService", function ($stateParams, $state) {
 
   };
 
-});
+};
+
+export default saveStateService;
+

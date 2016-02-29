@@ -1,5 +1,4 @@
-if (!window.mocks) window.mocks = {};
-window.mocks.messages = [{
+let messages = [{
   "postId": 1,
   "folder": "inbox",
   "id": 0,
@@ -2464,4 +2463,6 @@ window.mocks.messages = [{
   "email": "Solon.Goldner@judah.org",
   "body": "quo nisi impedit velit repellendus esse itaque ut saepe\nvoluptatibus occaecati ab eaque dolores\nmaxime alias velit ducimus placeat sit laudantium quia\ncorrupti doloremque ut"
 }]
+
+export default messages;
 

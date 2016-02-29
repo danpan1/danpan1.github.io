@@ -1,4 +1,4 @@
-app.service("asideService", function () {
+let asideService = function() {
 
   this.aside = [{
     "title": "Inbox"
@@ -15,5 +15,8 @@ app.service("asideService", function () {
   this.get = () => {
     return this.aside;
   };
-  
-})
+
+}
+
+export default asideService;
+
