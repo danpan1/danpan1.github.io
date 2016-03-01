@@ -1,10 +1,13 @@
 .main-columns {
-    overflow: scroll;
+    overflow: auto;
     max-height: 835px;
 }
 .rowLogin{
 
     background: url('../img/1.jpg');
+}
+.list-group{
+    text-align: left;
 }
 #contactEdit{
     width: 550px;

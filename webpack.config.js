@@ -61,7 +61,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
 
-        include: __dirname + "/app",
+        include: path.resolve(__dirname, "app"),
 
         query: {
           // plugins: ['transform-runtime'],

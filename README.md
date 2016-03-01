@@ -3,6 +3,14 @@
 ## About
 This is a qualifying work of AngularJS course from learn.javascript.ru
 Working demo is [here](http://danpan1.github.io/)
+* Webpack
+* Unit-test (karma, jasmine)
+* ES6
+* REST (restangular)
+* Routing (ui-router)
+* LocalStorage
+* Authorization
+
 
 ## Requirements
 * node

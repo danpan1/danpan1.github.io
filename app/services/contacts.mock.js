@@ -6,7 +6,7 @@ window.mocks.contacts = [{
   "email": "danpan123@123yandex.ru",
   "tel": "31231232",
   "dateOfBirth": "03/12/1924",
-  "notes": "Прибалтика Дома"
+  "notes": "notes"
 }, {
   "id": 2,
   "avatar": "https://pp.vk.me/c607330/v607330530/470a/P3srj5eL4Gg.jpg",
