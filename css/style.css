@@ -9,6 +9,13 @@
 .list-group{
     text-align: left;
 }
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    background-color: rgba(0, 0, 0, 0.16);
+}
+ul.nav.navbar-nav{
+    width: 95%;
+}
+
 #contactEdit{
     width: 550px;
     height: 480px;

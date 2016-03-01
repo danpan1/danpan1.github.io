@@ -2,9 +2,6 @@
     <div class="container">
         <a class="navbar-brand" href="#"></a>
         <ul class="nav navbar-nav">
-            <li>
-                <!-- <a href="https://github.com/danpan1/danpan1.github.io">to GitHub</a> -->
-            </li>
             <li><a ui-sref="app.mail({mailBox : 'inbox'})" ui-sref-active = "active">Mail</a></li>
             <li><a ui-sref="app.contacts.list" ui-sref-active = "active">Contacts</a></li>
             <li></li>
@@ -14,7 +11,7 @@
                 <!-- <form>
             <input type="search" class="form-control" placeholder="Search mails" ng-model="main.searchText" ng-change="main.search()"> </form> -->
             </li>
-            <li class="navbar-right"> <a ui-sref="login" ng-click="main.logOut()">LOG OUT</a>
+            <li class="navbar-right bg-danger"> <a ui-sref="login" ng-click="main.logOut()">LOG OUT</a>
                 <!-- <a ng-click="main.move('trash')" href="#contact"><img src="img/trash.png" height="30" width="30"> --></a>
                 <!-- <img ng-src="https://pp.vk.me/c616428/v616428036/8dd0/oERbNws4rnE.jpg" class="img-circle img-responsive" src="https://randomuser.me/api/portraits/thumb/men/57.jpg"> -->
             </li>
@@ -24,6 +21,6 @@
 <!-- main layout -->
 <div class="container">
     <ui-view>
-        <!-- <img src="./img/stopwatch-gif-preloader.gif"> -->
+        <!-- <img src="../img/stopwatch-gif-preloader.gif" height="400" width="600"> -->
     </ui-view>
 </div>
