@@ -21,13 +21,3 @@ npm install
 ## For test
 npm test
  
-## TODO
-* Wrong password notification
-* Test coverage
-* 75% Test istambul
-* Interceptors
-* WebPack
-* Trash
-* Css and design
-* Cookie for save login
-* Heroku for node js
